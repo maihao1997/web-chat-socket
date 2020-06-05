@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+   
+<script>
+  async function sendData(){
+    console.log('zoos')
+    fetch('http://localhost:3000/',{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+    }
+</script>
+ <!--  SINGLE FILE -->
+<form action="http://localhost:3000/upload" enctype="multipart/form-data" method="POST"> 
+  <input type="file" id="input" name="file">
+   <input type="submit" value="Upload a file"/>
+</form>
+ 
+   
+</body>
+</html>
